@@ -21,3 +21,6 @@ Console.WriteLine("Az első gép: " + gep1);
 
 gep1.ProgramMasol(400);
 Console.WriteLine("Az első gép: " + gep1);
+
+gep3.ProgramMasol(1);
+Console.WriteLine("A harmadik gép: " + gep3);
