@@ -18,9 +18,11 @@ Console.WriteLine();
 gep1.Kapcsol();
 gep1.ProgramMasol(800);
 Console.WriteLine("Az első gép: " + gep1);
+Console.WriteLine();
 
 gep1.ProgramMasol(400);
 Console.WriteLine("Az első gép: " + gep1);
+Console.WriteLine();
 
 gep3.ProgramMasol(1);
 Console.WriteLine("A harmadik gép: " + gep3);

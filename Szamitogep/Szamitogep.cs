@@ -31,12 +31,21 @@ namespace Szamitogepek
 
        public bool ProgramMasol(double programMeret)
        {
-            if (Bekapcsolva && SzabadMemoria >= programMeret)
-    {
-                SzabadMemoria -= programMeret; // SzabadMemoria = SzabadMemoria - programMeret;
-                return true; // Másolás sikeres
+            if (!Bekapcsolva) //kikapcsolt gép
+            {
+                Console.WriteLine($"A {programMeret} MB méretű program másolása sikertelen, mert a számítógép ki van kapcsolva!");
+                return false;
             }
-            return false; // Másolás sikertelen
+
+            if (SzabadMemoria < programMeret) //nincs elég hely
+            {
+                Console.WriteLine($"A {programMeret} MB méretű program másolása sikertelen, mert nincs elég szabad memória! (Csak {SzabadMemoria} MB érhető el)");
+                return false;
+            }
+
+            SzabadMemoria -= programMeret; //minden ok
+            Console.WriteLine($"A program másolása sikeres! {programMeret} MB átmásolva, fennmaradó memória: {SzabadMemoria} MB.");
+            return true;
         }
 
         public override string? ToString()
@@ -47,4 +56,3 @@ namespace Szamitogepek
 
 
 }
-//azt szeretném hogy ha nincs elég szabad memória vagy a gép ki van kapcsolva akkor írja ki hogy a másolás nem lehetsége mert a gép ki van kapcsolva vagy elfogyott a memória
